@@ -1,79 +1,32 @@
-﻿@{
+﻿@model List<WorkExperience>
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="page">
     <section class="personalia">
-
         <img class="person-logo" src="images/person-pasfoto.png">
         <h1 class="person-name">Yorick te Riele</h1>
-
     </section>
 
     <section class="profile">
-
         <section class="profile-content">
-
-            <div class="profile-content__category--hidden-mobile">
-                <h3 class="profile-content__category-title">Profiel</h3>
-                <hr>
-            </div>
-
-            <div class="profile-content__element--hidden-mobile">
-                <div class="profile-content__element-header">
-                </div>
-                <p class="profile-content__description">
-                    blablabla.
-                <p>
-            </div>
-
-
             <div class="profile-content__category">
                 <h3 class="profile-content__category-title">Werkervaringen</h3>
                 <hr>
             </div>
 
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Medewerker</h4>
-                    <p class="profile-content__period">2023 - 2024</p>
+            @foreach (var job in Model)
+            {
+                <div class="profile-content__element">
+                    <div class="profile-content__element-header">
+                        <h4 class="profile-content__title">@job.Title</h4>
+                        <p class="profile-content__period">@job.Period</p>
+                    </div>
+                    <p class="profile-content__institute">@job.Institute</p>
                 </div>
-                <p class="profile-content__institute">Student aan huis</p>
-            </div>
-
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Schaduwstage Operational Specialist Intelligence</h4>
-                    <p class="profile-content__period">jan 2020 - feb 2021</p>
-                </div>
-                <p class="profile-content__institute">Politie Oost-Nederland</p>
-            </div>
-
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Webdesigner</h4>
-                    <p class="profile-content__period">2021 - Heden</p>
-                </div>
-                <p class="profile-content__institute">OmmerOase, Ommen</p>
-            </div>
-
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Horecamedewerker/schoonmaker</h4>
-                    <p class="profile-content__period">2021 - 2022</p>
-                </div>
-                <p class="profile-content__institute">Monkey Town, Zwolle</p>
-            </div>
-
-            <div class="profile-content__element">
-                <div class="profile-content__element-header">
-                    <h4 class="profile-content__title">Krantenbezorger</h4>
-                    <p class="profile-content__period">2020 - 2021</p>
-                </div>
-                <p class="profile-content__institute">All-Inn, Zwolle</p>
-            </div>
-
+            }
         </section>
-
     </section>
 </div>
