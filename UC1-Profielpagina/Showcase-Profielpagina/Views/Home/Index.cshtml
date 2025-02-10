@@ -1,7 +1,5 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
-    var experiences = ViewData["Experiences"] as List<WorkExperience>;
-    var aboutMe = ViewData["AboutMe"] as string;
 }
 
 <div class="page">
@@ -13,27 +11,65 @@
     <section class="profile">
         <section class="profile-content">
             <div class="profile-content__category">
-                <h3 class="profile-content__category-title">Over mij</h3>
+                <h3 class="profile-content__category-title">@ViewData["AboutMeTitle"]</h3>
                 <hr>
             </div>
-            <p>@aboutMe</p>
+            <p>@ViewData["AboutMeInput"]</p>
         </section>
     </section>
 
     <section class="profile">
         <section class="profile-content">
             <div class="profile-content__category">
-                <h3 class="profile-content__category-title">Werkervaringen</h3>
+                <h3 class="profile-content__category-title">@ViewData["ExperiencesTitle"]</h3>
                 <hr>
             </div>
 
-            @foreach (var job in experiences) {
+            @foreach (var job in (List<WorkExperience>)ViewData["ExperiencesInput"]) {
                 <div class="profile-content__element">
                     <div class="profile-content__element-header">
                         <h4 class="profile-content__title">@job.Title</h4>
                         <p class="profile-content__period">@job.Period</p>
                     </div>
                     <p class="profile-content__institute">@job.Institute</p>
+                </div>
+            }
+        </section>
+    </section>
+
+    <section class="profile">
+        <section class="profile-content">
+            <div class="profile-content__category">
+                <h3 class="profile-content__category-title">@ViewData["SkillsTitle"]</h3>
+                <hr>
+            </div>
+
+            @foreach (var skill in (List<WorkExperience>)ViewData["SkillsInput"]) {
+                <div class="profile-content__element">
+                    <div class="profile-content__element-header">
+                        <h4 class="profile-content__title">@skill.Title</h4>
+                        <p class="profile-content__period">@skill.Period</p>
+                    </div>
+                    <p class="profile-content__institute">@skill.Institute</p>
+                </div>
+            }
+        </section>
+    </section>
+
+    <section class="profile">
+        <section class="profile-content">
+            <div class="profile-content__category">
+                <h3 class="profile-content__category-title">@ViewData["ProjectsTitle"]</h3>
+                <hr>
+            </div>
+
+            @foreach (var project in (List<WorkExperience>)ViewData["ProjectsInput"]) {
+                <div class="profile-content__element">
+                    <div class="profile-content__element-header">
+                        <h4 class="profile-content__title">@project.Title</h4>
+                        <p class="profile-content__period">@project.Period</p>
+                    </div>
+                    <p class="profile-content__institute">@project.Institute</p>
                 </div>
             }
         </section>
