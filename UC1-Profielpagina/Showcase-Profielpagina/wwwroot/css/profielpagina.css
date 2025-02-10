@@ -1,9 +1,16 @@
 ﻿/*mobile version*/
 
 .page {
-    display: flex;
-    flex-direction: column;
-    font-family: Arial;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Max 2 kolommen */
+    gap: 20px;
+}
+
+/* Bij schermen kleiner dan 900px → 1 kolom */
+@media (max-width: 900px) {
+    .page {
+        grid-template-columns: 1fr; /* Schakelt naar 1 kolom */
+    }
 }
 
 .personalia {

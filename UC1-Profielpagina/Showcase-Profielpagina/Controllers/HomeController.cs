@@ -13,8 +13,7 @@ namespace Showcase_Profielpagina.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
-        {
+        public IActionResult Index() {
             var workExperiences = new List<WorkExperience>{
                 new WorkExperience("Medewerker", "2023 - 2024", "Student aan huis, Zwolle"),
                 new WorkExperience("Schaduwstage Operational Specialist Intelligence", "jan 2020 - feb 2021", "Politie Oost-Nederland"),
@@ -23,8 +22,15 @@ namespace Showcase_Profielpagina.Controllers
                 new WorkExperience("Krantenbezorger", "2020 - 2021", "All-Inn, Zwolle")
             };
 
-            return View(workExperiences);
+            ViewData["Experiences"] = workExperiences;
+
+            string aboutMe = "Ik ben een enthousiaste en leergierige student Software Engineering met een passie voor technologie en ontwikkeling. Nieuwe kennis opdoen en deze praktisch toepassen motiveert mij. Ik zoek actief naar manieren om mezelf te verbeteren en uitdagingen aan te gaan. Mijn doel is om met mijn vaardigheden en doorzettingsvermogen een waardevolle bijdrage te leveren aan uw organisatie.";
+
+            ViewData["AboutMe"] = aboutMe;
+
+            return View();
         }
+
 
         public IActionResult Privacy()
         {
@@ -36,17 +42,6 @@ namespace Showcase_Profielpagina.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }
-}
-public class WorkExperience {
-    public string Title { get; set; }
-    public string Period { get; set; }
-    public string Institute { get; set; }
-
-    public WorkExperience(string title, string period, string institute) {
-        Title = title;
-        Period = period;
-        Institute = institute;
     }
 }
 

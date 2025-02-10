@@ -1,7 +1,7 @@
-﻿@model List<WorkExperience>
-
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
+    var experiences = ViewData["Experiences"] as List<WorkExperience>;
+    var aboutMe = ViewData["AboutMe"] as string;
 }
 
 <div class="page">
@@ -16,8 +16,7 @@
                 <h3 class="profile-content__category-title">Over mij</h3>
                 <hr>
             </div>
-
-            
+            <p>@aboutMe</p>
         </section>
     </section>
 
@@ -28,8 +27,7 @@
                 <hr>
             </div>
 
-            @foreach (var job in Model)
-            {
+            @foreach (var job in experiences) {
                 <div class="profile-content__element">
                     <div class="profile-content__element-header">
                         <h4 class="profile-content__title">@job.Title</h4>
