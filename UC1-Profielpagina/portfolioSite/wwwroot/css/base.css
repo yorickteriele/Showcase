@@ -1,0 +1,11 @@
+:root {
+    --background-color: rgba(18, 18, 18, 0.9);
+    --text-color: #e0e0e0;
+    --primary-color: #4caf50;
+    --secondary-color: rgba(83, 0, 179, 0.9);
+    --accent-color: rgba(34, 34, 34, 0.9);
+    --border-color: rgba(224, 224, 224, 0.9);
+    --highlight-color: rgba(255, 255, 255, 0.9);
+    --muted-text-color: rgba(176, 176, 176, 0.9);
+    --divider-color: rgba(51, 51, 51, 0.9);
+}
