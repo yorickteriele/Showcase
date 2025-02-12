@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Showcase_Profielpagina.Models;
 using System.Diagnostics;
 
-namespace Showcase_Profielpagina.Controllers
+namespace Controllers
 {
     public class HomeController : Controller
     {

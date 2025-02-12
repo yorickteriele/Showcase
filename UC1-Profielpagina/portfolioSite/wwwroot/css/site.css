@@ -23,8 +23,8 @@ html {
 
 #blue-ball {
     position: fixed;
-    width: 35rem;
-    height: 35rem;
+    width: 5rem;
+    height: 5rem;
     background-color: #00bfa3;
     border-radius: 50%;
     top: 0;
