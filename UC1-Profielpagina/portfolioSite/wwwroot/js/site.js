@@ -1,4 +1,7 @@
-﻿document.addEventListener("DOMContentLoaded", function() {
+﻿document.addEventListener("DOMContentLoaded", function () {
+
+    const gdpr = new GDPR();
+    
     const numBalls = 150;
     const balls = [];
     const ballSize = 5;
@@ -11,7 +14,7 @@
     const existingBall = document.getElementById("blue-ball");
 
     function createBall() {
-        const ball = existingBall.cloneNode(true); // Clone the existing ball
+        const ball = existingBall.cloneNode(true); 
         ball.classList.add("ball");
         document.body.appendChild(ball);
 
@@ -20,21 +23,18 @@
         let speedX = (Math.random() - 0.5) * ballSpeed * 2;
         let speedY = (Math.random() - 0.5) * ballSpeed * 2;
 
-        balls.push({ element: ball, x, y, speedX, speedY });
+        balls.push({element: ball, x, y, speedX, speedY});
     }
 
-    // Create the balls
     for (let i = 0; i < numBalls; i++) {
         createBall();
     }
 
-    // Track mouse movement
     document.addEventListener("mousemove", (event) => {
         mouseX = event.clientX;
         mouseY = event.clientY;
     });
 
-    // Update ball positions
     function updatePositions() {
         for (let ball of balls) {
             let dx = mouseX - (ball.x + ballSize / 2);
@@ -59,7 +59,6 @@
         requestAnimationFrame(updatePositions);
     }
 
-    // Handle collisions between balls
     function handleCollisions() {
         for (let i = 0; i < balls.length; i++) {
             for (let j = i + 1; j < balls.length; j++) {

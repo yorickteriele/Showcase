@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Showcase_Profielpagina.Controllers
+namespace Showcase_Profielpagina.Controllers;
+
+public class TeamController : Controller
 {
-    public class TeamController : Controller
+    public IActionResult Topteam()
     {
-        public IActionResult Topteam()
-        {
-            return View();
-        }
+        return View();
     }
 }

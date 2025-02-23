@@ -4,12 +4,11 @@
         <TargetFramework>net8.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>Showcase_Profielpagina</RootNamespace>
-      <UserSecretsId>c08b9c35-34ed-4aad-9d90-a5450c83a612</UserSecretsId>
+      <UserSecretsId>9e65dc60-9ad6-4aed-bc89-2596ff6e4186</UserSecretsId>
   </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     </ItemGroup>
 
 </Project>

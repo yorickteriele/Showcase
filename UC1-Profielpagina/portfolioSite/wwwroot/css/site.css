@@ -2,7 +2,7 @@ html {
     font-size: 14px;
     position: relative;
     min-height: 100%;
-    background-color: var(--background-color); 
+    background-color: var(--background-color);
     color: #e0e0e0;
 }
 
@@ -47,7 +47,7 @@ header {
     background-color: var(--accent-color);
     border-bottom: 2px solid var(--divider-color);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    
+
 }
 
 .navbar-brand {

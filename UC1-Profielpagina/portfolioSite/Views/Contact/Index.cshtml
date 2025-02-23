@@ -3,37 +3,86 @@
     ViewData["Title"] = "Contactpagina";
 }
 
-<div class="container">
-    <section class="contact-section">
-        <h1>Neem contact op</h1>
-        <p>@ViewBag.Message</p>
-        <form method="post" class="contact-form">
+<section class="contact-section">
+    <h1>Neem contact op</h1>
+    <p>@ViewBag.Message</p>
+    @if (TempData["Message"] != null)
+    {
+        <div id="flash-message" class="flash-message">
+            @TempData["Message"]
+        </div>
+    }
 
+    <form id="contact-form" method="post" class="contact-form">
+        <div class="form-row">
             <div class="form-group">
-                <label for="firstname">Voornaam</label>
+                <label for="firstname">Voornaam*</label>
                 <input type="text" asp-for="FirstName" id="firstname" required>
+                <span asp-validation-for="FirstName" class="text-danger"></span>
             </div>
-
             <div class="form-group">
-                <label for="lastname">Achternaam</label>
+                <label for="lastname">Achternaam*</label>
                 <input type="text" asp-for="LastName" id="lastname" required>
+                <span asp-validation-for="LastName" class="text-danger"></span>
             </div>
+        </div>
 
-            <div class="form-group">
-                <label for="email">E-mailadres</label>
-                <input type="email" asp-for="Email" id="email">
-            </div>
+        <div class="form-group">
+            <label for="email">E-mailadres*</label>
+            <input type="email" asp-for="Email" id="email" required>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
 
-            <div class="form-group">
-                <label for="phone">Telefoonnummer</label>
-                <input type="tel" asp-for="Phone" id="phone">
-            </div>
+        <div class="form-group">
+            <label for="phone">Telefoonnummer</label>
+            <input type="tel" asp-for="Phone" id="phone">
+            <span asp-validation-for="Phone" class="text-danger"></span>
+        </div>
 
-            <button type="submit" class="btn-submit">Verstuur</button>
-        </form>
-    </section>
-</div>
+        <div class="form-group">
+            <label for="subject">Onderwerp*</label>
+            <input type="text" asp-for="Subject" id="subject" maxlength="200" required>
+            <span asp-validation-for="Subject" class="text-danger"></span>
+        </div>
 
-<style>
-    
-</style>
+        <div class="form-group">
+            <label for="message">Bericht*</label>
+            <textarea asp-for="Message" id="message" rows="4" required maxlength="600"></textarea>
+            <span asp-validation-for="Message" class="text-danger"></span>
+        </div>
+
+        <input type="hidden" id="g-recaptcha-response" name="gRecaptchaResponse"/>
+
+        <button class="g-recaptcha btn-submit"
+                data-sitekey="6Lfn9toqAAAAAJWWttKptcMwqO3NW9kl9_g1QzFe"
+                data-callback="onSubmit"
+                data-action="submit">
+            <span id="button-text">Verstuur!</span>
+            <span id="spinner" class="spinner" style="display: none;"></span>
+        </button>
+    </form>
+</section>
+@* <section class="contact-section content-gdpr-reject"> *@
+@*     <h1>Zonder gdpr kun je geen contact mail sturen.</h1> *@
+@* </section> *@
+
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script>
+    function onSubmit(token) {
+        document.getElementById("g-recaptcha-response").value = token;
+
+        document.getElementById("button-text").style.display = "none";
+        document.getElementById("spinner").style.display = "inline-block";
+
+        document.getElementById("contact-form").submit();
+    }
+    document.addEventListener("DOMContentLoaded", function() {
+        let flashMessage = document.getElementById("flash-message");
+        if (flashMessage) {
+            setTimeout(() => {
+                flashMessage.classList.add("hide");
+                setTimeout(() => flashMessage.remove(), 1000);
+            }, 3000); 
+        }
+    });
+</script>
