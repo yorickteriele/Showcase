@@ -18,6 +18,7 @@ public class Contactform
     public string Email { get; set; }
 
     [Phone]
+    [StringLength(20)]
     public string Phone { get; set; }
 
     [Required]
