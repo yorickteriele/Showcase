@@ -4,19 +4,15 @@ using Showcase_Profielpagina.Models;
 
 namespace Controllers;
 
-public class HomeController : Controller
-{
+public class HomeController : Controller {
     private readonly ILogger<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
-    {
+    public HomeController(ILogger<HomeController> logger) {
         _logger = logger;
     }
 
-    public IActionResult Index()
-    {
-        var skills = new List<WorkExperience>
-        {
+    public IActionResult Index() {
+        var skills = new List<WorkExperience> {
             new("C#", "Expert", "Programming Language"),
             new("SQL", "Intermediate", "Database Management"),
             new("Unity", "Advanced", "Game Development"),
@@ -27,8 +23,7 @@ public class HomeController : Controller
         ViewData["SkillsInput"] = skills;
         ViewData["SkillsTitle"] = skillsTitle;
 
-        var workExperiences = new List<WorkExperience>
-        {
+        var workExperiences = new List<WorkExperience> {
             new("Medewerker", "2023 - 2024", "Student aan huis, Zwolle"),
             new("Schaduwstage Operational Specialist Intelligence", "jan 2020 - feb 2021", "Politie Oost-Nederland"),
             new("Webdesigner", "2021 - Heden", "OmmerOase, Ommen"),
@@ -51,14 +46,12 @@ public class HomeController : Controller
     }
 
 
-    public IActionResult Privacy()
-    {
+    public IActionResult Privacy() {
         return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
+    public IActionResult Error() {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 }

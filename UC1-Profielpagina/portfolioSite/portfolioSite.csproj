@@ -5,11 +5,11 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <RootNamespace>Showcase_Profielpagina</RootNamespace>
-      <UserSecretsId>c08b9c35-34ed-4aad-9d90-a5450c83a612</UserSecretsId>
-  </PropertyGroup>
+        <UserSecretsId>c08b9c35-34ed-4aad-9d90-a5450c83a612</UserSecretsId>
+    </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1"/>
     </ItemGroup>
 
 </Project>

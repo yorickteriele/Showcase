@@ -46,8 +46,7 @@
                 <hr>
             </div>
 
-            @foreach (var job in (List<WorkExperience>)ViewData["ExperiencesInput"])
-            {
+            @foreach (var job in (List<WorkExperience>)ViewData["ExperiencesInput"]) {
                 <div class="profile-content__element">
                     <div class="profile-content__element-header">
                         <h4 class="profile-content__title">@job.Title</h4>
@@ -66,8 +65,7 @@
                 <hr>
             </div>
 
-            @foreach (var skill in (List<WorkExperience>)ViewData["SkillsInput"])
-            {
+            @foreach (var skill in (List<WorkExperience>)ViewData["SkillsInput"]) {
                 <div class="profile-content__element">
                     <div class="profile-content__element-header">
                         <h4 class="profile-content__title">@skill.Title</h4>

@@ -6,8 +6,7 @@
 <section class="contact-section">
     <h1>Neem contact op</h1>
     <p>@ViewBag.Message</p>
-    @if (TempData["Message"] != null)
-    {
+    @if (TempData["Message"] != null) {
         <div id="flash-message" class="flash-message">
             @TempData["Message"]
         </div>
@@ -76,13 +75,14 @@
 
         document.getElementById("contact-form").submit();
     }
-    document.addEventListener("DOMContentLoaded", function() {
+
+    document.addEventListener("DOMContentLoaded", function () {
         let flashMessage = document.getElementById("flash-message");
         if (flashMessage) {
             setTimeout(() => {
                 flashMessage.classList.add("hide");
                 setTimeout(() => flashMessage.remove(), 1000);
-            }, 3000); 
+            }, 3000);
         }
     });
 </script>

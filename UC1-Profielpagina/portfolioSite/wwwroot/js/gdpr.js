@@ -3,9 +3,9 @@ class GDPR {
         this.showStatus();
         this.showContent();
         this.bindEvents();
-        
-        
-        if(!this.getCookie("gdpr-consent")) {
+
+
+        if (!this.getCookie("gdpr-consent")) {
             this.showGDPR();
         }
     }

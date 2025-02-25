@@ -1,20 +1,19 @@
 ﻿document.addEventListener("DOMContentLoaded", function () {
 
     const gdpr = new GDPR();
-    
-    const numBalls = 150;
+
+    const numBalls = 50;
     const balls = [];
-    const ballSize = 5;
+    const ballSize = 8;
     const ballSpeed = 4;
     let mouseX = window.innerWidth / 2;
     let mouseY = window.innerHeight / 2;
     let followThreshold = 300;
 
-    // Find the existing div with id "blue-ball"
     const existingBall = document.getElementById("blue-ball");
 
     function createBall() {
-        const ball = existingBall.cloneNode(true); 
+        const ball = existingBall.cloneNode(true);
         ball.classList.add("ball");
         document.body.appendChild(ball);
 

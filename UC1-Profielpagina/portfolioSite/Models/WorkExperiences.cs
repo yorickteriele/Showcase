@@ -1,7 +1,5 @@
-public class WorkExperience
-{
-    public WorkExperience(string title, string period, string institute)
-    {
+public class WorkExperience {
+    public WorkExperience(string title, string period, string institute) {
         Title = title;
         Period = period;
         Institute = institute;

@@ -2,10 +2,8 @@
 
 namespace Showcase_Profielpagina.Controllers;
 
-public class TeamController : Controller
-{
-    public IActionResult Topteam()
-    {
+public class TeamController : Controller {
+    public IActionResult Topteam() {
         return View();
     }
 }
